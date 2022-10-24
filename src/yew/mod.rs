@@ -66,8 +66,7 @@ impl Component for CodeEditor {
         }
     }
 
-    fn changed(&mut self, ctx: &Context<Self>) -> bool {
-        let old_props = mem::replace(&mut self.props, ctx.props().clone());
+    fn changed(&mut self, ctx: &Context<Self>, old_props: &Self::Properties) -> bool {
         // these are the new values
         let CodeEditorProps {
             link,
